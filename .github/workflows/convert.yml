@@ -2,7 +2,7 @@ name: Convert Excel to CSV
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Run every 24 hours at midnight UTC
+    - cron: '*/30 * * * *'  # Run every 30 minutes
   workflow_dispatch:
 
 jobs:
