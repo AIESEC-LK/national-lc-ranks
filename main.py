@@ -4,7 +4,7 @@ from openpyxl import Workbook
 from datetime import datetime
 
 base_url = 'https://analytics.api.aiesec.org/v2/applications/analyze.json'
-access_token = '14df75d8669384c67c6f8a092f9d70cbdbe13103c01f2839eb4f09a62eae547b'
+access_token = '07b2de66c807bb9873a20e3114060120d34f119eb94bf80efca359ef93ce6c2c'
 
 entities_list = [
     {'id': '222', 'name': 'CC'},
@@ -109,7 +109,8 @@ def create_excel_sheets(final_output):
                 for sub_col, product in enumerate(products, start=0):
                     ws.cell(row=row, column=col * 7 - 5 + sub_col).value = data[entity['name']][stage][product]
 
-    wb.save("AIESEC_Data.xlsx")
+    wb.save("AIESEC_Data2.xlsx")
+    
 
 def main():
     current_year, current_month = get_current_year_and_month()
