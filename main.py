@@ -109,7 +109,7 @@ def create_excel_sheets(final_output):
                 for sub_col, product in enumerate(products, start=0):
                     ws.cell(row=row, column=col * 7 - 5 + sub_col).value = data[entity['name']][stage][product]
 
-    wb.save("AIESEC_Data2.xlsx")
+    wb.save("AIESEC_Data.xlsx")
 
 def main():
     current_year, current_month = get_current_year_and_month()
