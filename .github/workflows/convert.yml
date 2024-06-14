@@ -1,5 +1,5 @@
 name: Convert Excel to CSV
-
+permissions: write-all
 on:
   schedule:
     - cron: '*/30 * * * *'  # Run every 30 minutes
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -30,3 +30,11 @@ jobs:
       - name: Convert Excel to CSV
         run: |
           python convert.py
+          
+      - name: Push files
+        run: |
+          git config --global user.email "srilanka@aiesec.net"
+          git config --global user.name "aslgithubbot"
+          git add .
+          git commit -m "CSV Update"
+          git push
